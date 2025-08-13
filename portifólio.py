@@ -62,4 +62,4 @@ Python, R, SQL, Power BI e automações de dados.
 
 elif menu == "👨‍🎓 Certificados":
     st.subheader("Curso de Inglês")
-    st.image("Certificados/certificado_ingles.png", width=150)
+    st.image("Certificados/certificado_ingles.png", width=250)
