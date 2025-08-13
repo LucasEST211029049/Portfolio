@@ -67,8 +67,9 @@ elif menu == "👨‍🎓 Certificados":
     st.subheader("Cientista e de dados/Analista de dados")
 
     pdfs = [
-        ("Certificados\Microsoft SQL Server 2022 - aprofundando em procedures e funções.pdf", "Microsoft SQL Server 2022 - aprofundando em procedures e funções", "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-procedures-funcoes/certificate?lang=en"),
-
+        (r"Certificados\Microsoft SQL Server 2022 - aprofundando em procedures e funções.pdf",
+         "Microsoft SQL Server 2022 - aprofundando em procedures e funções",
+         "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-procedures-funcoes/certificate?lang=en"),
     ]
 
     # Percorre em grupos de 3 para criar colunas
