@@ -1,6 +1,7 @@
 # portfolio.py
 import streamlit as st
 import base64
+import os
 
 st.set_page_config(page_title="Portfólio - Lucas Matheus", layout="wide")
 
@@ -66,28 +67,17 @@ elif menu == "👨‍🎓 Certificados":
     st.image("Certificados/certificado_ingles.png", width=300)
     st.subheader("Cientista e de dados/Analista de dados")
 
-    pdfs = [
-        (r"Certificados\Microsoft SQL Server 2022 - aprofundando em procedures e funções.pdf",
-         "Microsoft SQL Server 2022 - aprofundando em procedures e funções",
-         "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-procedures-funcoes/certificate?lang=en"),
-    ]
 
-    # Percorre em grupos de 3 para criar colunas
-    for i in range(0, len(pdfs), 3):
-        cols = st.columns(3)
-        for idx, col in enumerate(cols):
-            if i + idx < len(pdfs):
-                pdf_file, title, link = pdfs[i + idx]
-                with col:
-                    # Lê o PDF em binário
-                    with open(pdf_file, "rb") as f:
-                        pdf_bytes = f.read()
-                    base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
-                    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="300" height="400" type="application/pdf"></iframe>'
+    pdf_file = r"Certificados\Microsoft SQL Server 2022 - aprofundando em procedures e funções.pdf"  # ajuste o caminho aqui
 
-                    st.markdown(f"### {title}")
-                    st.components.v1.html(pdf_display, height=400)
-                    st.markdown(f"[🔗 Link relacionado]({link})")
+    if os.path.exists(pdf_file):
+        with open(pdf_file, "rb") as f:
+            pdf_bytes = f.read()
+        base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
+        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="300" height="400" type="application/pdf"></iframe>'
+        st.components.v1.html(pdf_display, height=400)
+    else:
+        st.error(f"Arquivo não encontrado: {pdf_file}")
 
     st.subheader("Gestão de projetos e produtos")
 
