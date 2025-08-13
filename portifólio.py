@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Portfólio - Lucas Matheus", layout="wide")
 
 # --- MENU ---
-menu = st.sidebar.radio("Navegação", [ "ℹ️ Sobre mim","📂 Projetos", "📊 Dashboards", "📑 Relatórios"])
+menu = st.sidebar.radio("Navegação", [ "ℹ️ Sobre mim","📂 Projetos", "📊 Dashboards", "📑 Relatórios","👨‍🎓 Certificados"])
 
 # --- PROJETOS ---
 if menu == "📂 Projetos":
@@ -59,3 +59,7 @@ Python, R, SQL, Power BI e automações de dados.
 """)
     st.markdown("[💼 LinkedIn](https://linkedin.com/in/SEULINK)")
     st.markdown("[💻 GitHub](https://github.com/SEUUSUARIO)")
+
+elif menu == "👨‍🎓 Certificados":
+    st.subheader("Curso de Inglês")
+    st.image("Certificados/certificado_ingles.png", width=150)
