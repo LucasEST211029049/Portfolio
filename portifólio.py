@@ -126,7 +126,7 @@ if menu == texts[lang_code]["menu"]["about"]:
     st.title(texts[lang_code]["menu"]["about"])
     st.markdown(f"[{texts[lang_code]['linkedin']}](https://www.linkedin.com/in/lucas-matheus-673b311b3/)")
     st.markdown(f"[{texts[lang_code]['github']}](https://github.com/LucasEST211029049)")
-    st.markdown(f"[{texts[lang_code]['email']}](mailto:lucas.est2110@gmail.com)")
+    st.markdown(f"[{texts[lang_code]['contact_email']}](mailto:lucas.est2110@gmail.com)")
     st.write(f"{texts[lang_code]['contact_phone']}: +55 61 99954-1883")
     st.write(texts[lang_code]["about_text"])
 
