@@ -67,10 +67,10 @@ elif menu == "👨‍🎓 Certificados":
     st.image("Certificados/certificado_ingles.png", width=300)
     st.subheader("SQL Server")
 
-    images = [("Certificados/Microsoft SQL Server 2022 - getting to know SQL","Microsoft SQL Server 2022.png: conhecendo SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-conhecendo-sql?lang=en"),
-              ("Certificados/Microsoft SQL Server 2022 - consultas avançadas","Microsoft SQL Server 2022.png - consultas avançadas","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-consultas-avancadas?lang=en"),
-              ("Certificados/Microsoft SQL Server 2022 - manipulando dados","Microsoft SQL Server 2022.png - manipulando dados","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-manipulando-dados?lang=en"),
-              ("Certificados/Microsoft SQL Server 2022 - conhecendo o T-SQL","Microsoft SQL Server 2022.png - conhecendo o T-SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-conhecendo-t-sql?lang=en"),
+    images = [("Certificados/Microsoft SQL Server 2022 - getting to know SQL.png","Microsoft SQL Server 2022: conhecendo SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-conhecendo-sql?lang=en"),
+              ("Certificados/Microsoft SQL Server 2022 - consultas avançadas.png","Microsoft SQL Server 2022 - consultas avançadas","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-consultas-avancadas?lang=en"),
+              ("Certificados/Microsoft SQL Server 2022 - manipulando dados.png","Microsoft SQL Server 2022 - manipulando dados","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-manipulando-dados?lang=en"),
+              ("Certificados/Microsoft SQL Server 2022 - conhecendo o T-SQL.png","Microsoft SQL Server 2022 - conhecendo o T-SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-conhecendo-t-sql?lang=en"),
         ("Certificados/Microsoft SQL Server 2022 - aprofundando em procedures e funções.png", "Microsoft SQL Server 2022 - aprofundando em procedures e funções", "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-procedures-funcoes/certificate?lang=en"),
 
     ]
