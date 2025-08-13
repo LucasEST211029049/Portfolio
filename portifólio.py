@@ -76,7 +76,7 @@ elif menu == "👨‍🎓 Certificados":
             pdf_bytes = f.read()
         base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
         pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="300" height="400" type="application/pdf"></iframe>'
-        st.components.v1.html(pdf_display, height=400)
+        st.components.v1.html(pdf_display, height=200)
     else:
         st.error(f"Arquivo não encontrado: {pdf_file}")
 
