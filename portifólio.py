@@ -67,18 +67,23 @@ elif menu == "👨‍🎓 Certificados":
     st.image("Certificados/certificado_ingles.png", width=300)
     st.subheader("Cientista e de dados/Analista de dados")
 
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    pdf_file = os.path.join(base_dir, "Certificados",
-                            "Microsoft SQL Server 2022 - aprofundando em procedures e funções.pdf")
+    import streamlit as st
 
-    if os.path.exists(pdf_file):
-        with open(pdf_file, "rb") as f:
-            pdf_bytes = f.read()
-        base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="300" height="400" type="application/pdf"></iframe>'
-        st.components.v1.html(pdf_display, height=200)
-    else:
-        st.error(f"Arquivo não encontrado: {pdf_file}")
+    images = [
+        ("Certificados/Microsoft SQL Server 2022 - aprofundando em procedures e funções.png", "Microsoft SQL Server 2022 - aprofundando em procedures e funções", "https://link1"),
+
+    ]
+
+    st.title("Dashboards em Power BI")
+
+    for i in range(0, len(images), 3):
+        cols = st.columns(3)
+        for idx, col in enumerate(cols):
+            if i + idx < len(images):
+                img, caption, link = images[i + idx]
+                with col:
+                    st.image(img, caption=caption, width=250)
+                    st.markdown(f"[🔗 Ver Dashboard Público]({link})")
 
     st.subheader("Gestão de projetos e produtos")
 
