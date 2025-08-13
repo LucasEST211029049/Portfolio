@@ -51,7 +51,7 @@ elif menu == "📑 Relatórios":
     st.markdown("[📄 Baixar Relatório 2](https://drive.google.com/SEU_LINK_AQUI)")
 
 # --- SOBRE ---
-elif menu == "ℹ️ Sobre":
+elif menu == "ℹ️ Sobre mim":
     st.title("Sobre mim")
     st.write("""
 Sou Lucas Matheus Oliveira de Brito, estudante de Estatística na UnB, com experiência em 
