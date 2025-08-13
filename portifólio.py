@@ -67,8 +67,9 @@ elif menu == "👨‍🎓 Certificados":
     st.image("Certificados/certificado_ingles.png", width=300)
     st.subheader("Cientista e de dados/Analista de dados")
 
-
-    pdf_file = r"Certificados\Microsoft SQL Server 2022 - aprofundando em procedures e funções.pdf"  # ajuste o caminho aqui
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    pdf_file = os.path.join(base_dir, "Certificados",
+                            "Microsoft SQL Server 2022 - aprofundando em procedures e funções.pdf")
 
     if os.path.exists(pdf_file):
         with open(pdf_file, "rb") as f:
