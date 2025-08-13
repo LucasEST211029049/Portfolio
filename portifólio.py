@@ -65,16 +65,17 @@ Python, R, SQL, Power BI e automações de dados.
 elif menu == "👨‍🎓 Certificados":
     st.subheader("Curso de Inglês")
     st.image("Certificados/certificado_ingles.png", width=300)
-    st.subheader("Cientista e de dados/Analista de dados")
+    st.subheader("SQL Server")
 
     import streamlit as st
 
-    images = [
-        ("Certificados/Microsoft SQL Server 2022 - aprofundando em procedures e funções.png", "Microsoft SQL Server 2022 - aprofundando em procedures e funções", "https://link1"),
+    images = [("Certificados/Microsoft SQL Server 2022 - getting to know SQL","Microsoft SQL Server 2022: conhecendo SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-conhecendo-sql?lang=en"),
+              ("Certificados/Microsoft SQL Server 2022 - consultas avançadas","Microsoft SQL Server 2022 - consultas avançadas","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-consultas-avancadas?lang=en"),
+              ("Certificados/Microsoft SQL Server 2022 - manipulando dados","Microsoft SQL Server 2022 - manipulando dados","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-manipulando-dados?lang=en"),
+              ("Certificados/Microsoft SQL Server 2022 - conhecendo o T-SQL","Microsoft SQL Server 2022 - conhecendo o T-SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-conhecendo-t-sql?lang=en"),
+        ("Certificados/Microsoft SQL Server 2022 - aprofundando em procedures e funções.png", "Microsoft SQL Server 2022 - aprofundando em procedures e funções", "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-procedures-funcoes/certificate?lang=en"),
 
     ]
-
-    st.title("Dashboards em Power BI")
 
     for i in range(0, len(images), 3):
         cols = st.columns(3)
