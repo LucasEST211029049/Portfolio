@@ -1,78 +1,65 @@
-# portfolio.py
 import streamlit as st
-import base64
-import os
 
 st.set_page_config(page_title="Portfólio - Lucas Matheus", layout="wide")
 
-# --- MENU ---
-menu = st.sidebar.radio("Navegação", [ "ℹ️ Sobre mim","📂 Projetos", "📊 Dashboards", "📑 Relatórios","👨‍🎓 Certificados"])
+# Seletor de idioma no sidebar
+language = st.sidebar.selectbox("Choose language / Escolha o idioma", ["Português", "English"])
+lang_code = "pt" if language == "Português" else "en"
 
-# --- PROJETOS ---
-if menu == "📂 Projetos":
-    st.title("Projetos em Python, R e SQL")
-    st.write("Aqui estão alguns exemplos de projetos que desenvolvi. O código completo está disponível no GitHub.")
+# Dicionário de textos para cada idioma
+texts = {
+    "pt": {
+        "menu": {
+            "about": "ℹ️ Sobre mim",
+            "projects": "📂 Projetos",
+            "dashboards": "📊 Dashboards",
+            "reports": "📑 Relatórios",
+            "certificates": "👨‍🎓 Certificados",
+        },
+        "certificates_title": "Certificados",
+        "english_course": "Curso de Inglês",
+        "sql_server": "SQL Server",
+        "project_management": "Gestão de projetos e produtos",
+        "view_link": "🔗 Ver Dashboard Público",
+        # outros textos que precisar
+    },
+    "en": {
+        "menu": {
+            "about": "ℹ️ About me",
+            "projects": "📂 Projects",
+            "dashboards": "📊 Dashboards",
+            "reports": "📑 Reports",
+            "certificates": "👨‍🎓 Certificates",
+        },
+        "certificates_title": "Certificates",
+        "english_course": "English Course",
+        "sql_server": "SQL Server",
+        "project_management": "Project and Product Management",
+        "view_link": "🔗 See Public Dashboard",
+    },
+}
 
-    st.subheader("1. Automação Web com Selenium")
-    st.code("""
-from selenium import webdriver
-navegador = webdriver.Chrome()
-navegador.get("https://exemplo.com")
-# Código de automação...
-    """, language="python")
-    st.markdown("[🔗 Ver código no GitHub](https://github.com/seuusuario/seurepositorio)")
+menu = st.sidebar.radio("Navigation / Navegação", [
+    texts[lang_code]["menu"]["about"],
+    texts[lang_code]["menu"]["projects"],
+    texts[lang_code]["menu"]["dashboards"],
+    texts[lang_code]["menu"]["reports"],
+    texts[lang_code]["menu"]["certificates"],
+])
 
-    st.subheader("2. Análise Estatística em R")
-    st.code("""
-dados <- read.csv("dados.csv")
-summary(dados)
-    """, language="r")
-    st.markdown("[🔗 Ver código no GitHub](https://github.com/seuusuario/seurepositorio)")
+# Agora seu menu vai trocar de idioma automaticamente
 
-    st.subheader("3. Consultas SQL")
-    st.code("""
-SELECT cliente, SUM(valor) AS total_compras
-FROM vendas
-GROUP BY cliente;
-    """, language="sql")
-
-# --- DASHBOARDS ---
-elif menu == "📊 Dashboards":
-    st.title("Dashboards em Power BI")
-    st.write("A seguir, prints e links para dashboards (com dados fictícios).")
-
-    st.image("painel1.png", caption="Exemplo de Dashboard Power BI")
-    st.markdown("[🔗 Ver Dashboard Público](https://app.powerbi.com/view?r=eyJrIjoiMGNjM2MyY2ItODQ1Zi00ODk1LWE2NzItOWU4NjhhZThkNTZlIiwidCI6ImVjMzU5YmExLTYzMGItNGQyYi1iODMzLWM4ZTZkNDhmODA1OSJ9)")
-
-# --- RELATÓRIOS ---
-elif menu == "📑 Relatórios":
-    st.title("Relatórios Técnicos e Acadêmicos")
-    st.write("Relatórios desenvolvidos no Overleaf (PDFs com dados fictícios).")
-
-    st.markdown("[📄 Baixar Relatório 1](https://drive.google.com/SEU_LINK_AQUI)")
-    st.markdown("[📄 Baixar Relatório 2](https://drive.google.com/SEU_LINK_AQUI)")
-
-# --- SOBRE ---
-elif menu == "ℹ️ Sobre mim":
-    st.title("Sobre mim")
-    st.write("""
-Sou Lucas Matheus Oliveira de Brito, estudante de Estatística na UnB, com experiência em 
-Python, R, SQL, Power BI e automações de dados.
-""")
-    st.markdown("[💼 LinkedIn](https://linkedin.com/in/SEULINK)")
-    st.markdown("[💻 GitHub](https://github.com/SEUUSUARIO)")
-
-elif menu == "👨‍🎓 Certificados":
-    st.subheader("Curso de Inglês")
+if menu == texts[lang_code]["menu"]["certificates"]:
+    st.subheader(texts[lang_code]["english_course"])
     st.image("Certificados/certificado_ingles.png", width=300)
-    st.subheader("SQL Server")
+    st.subheader(texts[lang_code]["sql_server"])
 
-    images = [("Certificados/Microsoft SQL Server 2022 - getting to know SQL.png","Microsoft SQL Server 2022: conhecendo SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-conhecendo-sql?lang=en"),
-              ("Certificados/Microsoft SQL Server 2022 - consultas avançadas.png","Microsoft SQL Server 2022 - consultas avançadas","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-consultas-avancadas?lang=en"),
-              ("Certificados/Microsoft SQL Server 2022 - manipulando dados.png","Microsoft SQL Server 2022 - manipulando dados","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-manipulando-dados?lang=en"),
-              ("Certificados/Microsoft SQL Server 2022 - conhecendo o T-SQL.png","Microsoft SQL Server 2022 - conhecendo o T-SQL","https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-conhecendo-t-sql?lang=en"),
+    images = [
+        ("Certificados/Microsoft SQL Server 2022 - getting to know SQL.png", "Microsoft SQL Server 2022: conhecendo SQL", "https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-conhecendo-sql?lang=en"),
+        ("Certificados/Microsoft SQL Server 2022 - consultas avançadas.png", "Microsoft SQL Server 2022 - consultas avançadas", "https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-consultas-avancadas?lang=en"),
+        ("Certificados/Microsoft SQL Server 2022 - manipulando dados.png", "Microsoft SQL Server 2022 - manipulando dados", "https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-manipulando-dados?lang=en"),
+        ("Certificados/Microsoft SQL Server 2022 - conhecendo o T-SQL.png", "Microsoft SQL Server 2022 - conhecendo o T-SQL", "https://cursos.alura.com.br/certificate/lucasmoliveirabrito2003/microsoft-sql-server-2022-conhecendo-t-sql?lang=en"),
         ("Certificados/Microsoft SQL Server 2022 - aprofundando em procedures e funções.png", "Microsoft SQL Server 2022 - aprofundando em procedures e funções", "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-procedures-funcoes/certificate?lang=en"),
-
     ]
 
     for i in range(0, len(images), 3):
@@ -82,8 +69,9 @@ elif menu == "👨‍🎓 Certificados":
                 img, caption, link = images[i + idx]
                 with col:
                     st.image(img, caption=caption, width=250)
-                    st.markdown(f"[🔗 Ver Dashboard Público]({link})")
+                    st.markdown(f"[{texts[lang_code]['view_link']}]({link})")
 
-    st.subheader("Gestão de projetos e produtos")
+    st.subheader(texts[lang_code]["project_management"])
+    # Continue adicionando os conteúdos e traduções conforme quiser...
 
-
+# Continue adaptando o resto do seu app usando essa lógica para trocar os textos e legendas
