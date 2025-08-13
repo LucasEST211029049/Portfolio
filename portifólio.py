@@ -22,6 +22,8 @@ Python, R, SQL, Power BI e automações de dados.
 """,
         "linkedin": "💼 LinkedIn",
         "github": "💻 GitHub",
+        "contact_email": "✉️ Email",
+        "contact_phone": "📞 Telefone",
         "projects_title": "Projetos em Python, R e SQL",
         "projects_intro": "Aqui estão alguns exemplos de projetos que desenvolvi. O código completo está disponível no GitHub.",
         "project_1_title": "1. Automação Web com Selenium",
@@ -72,6 +74,8 @@ Python, R, SQL, Power BI, and data automation.
 """,
         "linkedin": "💼 LinkedIn",
         "github": "💻 GitHub",
+        "contact_email": "✉️ Email",
+        "contact_phone": "📞 Phone",
         "projects_title": "Projects in Python, R, and SQL",
         "projects_intro": "Here are some project examples I developed. Full code is available on GitHub.",
         "project_1_title": "1. Web Automation with Selenium",
@@ -120,9 +124,13 @@ menu = st.sidebar.radio("Navigation / Navegação", [
 
 if menu == texts[lang_code]["menu"]["about"]:
     st.title(texts[lang_code]["menu"]["about"])
+    st.markdown(f"[{texts[lang_code]['linkedin']}](https://www.linkedin.com/in/lucas-matheus-673b311b3/)")
+    st.markdown(f"[{texts[lang_code]['github']}](https://github.com/LucasEST211029049)")
+    st.markdown(f"[{texts[lang_code]['email']}](mailto:lucas.est2110@gmail.com)")
+    st.write(f"{texts[lang_code]['contact_phone']}: +55 61 99954-1883")
     st.write(texts[lang_code]["about_text"])
-    st.markdown(f"[{texts[lang_code]['linkedin']}](https://linkedin.com/in/SEULINK)")
-    st.markdown(f"[{texts[lang_code]['github']}](https://github.com/SEUUSUARIO)")
+
+
 
 elif menu == texts[lang_code]["menu"]["projects"]:
     st.title(texts[lang_code]["projects_title"])
