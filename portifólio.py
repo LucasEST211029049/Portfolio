@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Portfólio - Lucas Matheus", layout="wide")
 
 # --- MENU ---
-menu = st.sidebar.radio("Navegação", ["📂 Projetos", "📊 Dashboards", "📑 Relatórios", "ℹ️ Sobre"])
+menu = st.sidebar.radio("Navegação", [ "ℹ️ Sobre mim","📂 Projetos", "📊 Dashboards", "📑 Relatórios"])
 
 # --- PROJETOS ---
 if menu == "📂 Projetos":
@@ -39,8 +39,8 @@ elif menu == "📊 Dashboards":
     st.title("Dashboards em Power BI")
     st.write("A seguir, prints e links para dashboards (com dados fictícios).")
 
-    st.image("dashboard_exemplo.png", caption="Exemplo de Dashboard Power BI")
-    st.markdown("[🔗 Ver Dashboard Público](https://app.powerbi.com/view?r=SEU_LINK_AQUI)")
+    st.image("painel1.png", caption="Exemplo de Dashboard Power BI")
+    st.markdown("[🔗 Ver Dashboard Público](https://app.powerbi.com/view?r=eyJrIjoiMGNjM2MyY2ItODQ1Zi00ODk1LWE2NzItOWU4NjhhZThkNTZlIiwidCI6ImVjMzU5YmExLTYzMGItNGQyYi1iODMzLWM4ZTZkNDhmODA1OSJ9)")
 
 # --- RELATÓRIOS ---
 elif menu == "📑 Relatórios":
