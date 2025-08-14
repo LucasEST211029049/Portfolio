@@ -226,7 +226,7 @@ elif menu == texts[lang_code]["menu"]["certificates"]:
     st.subheader(texts[lang_code]["Python - Machine Learning"])
 
     images = {
-        "file": "Certificados/Machine Learning na Prática com Projetos em Python",
+        "file": "Certificados/Machine Learning na Prática com Projetos em Python.png",
         "caption_pt": "Machine Learning na Prática com Projetos em Python",
         "caption_en": "Machine Learning in Practice with Python Projects",
         "link":"https://www.udemy.com/certificate/UC-86a2cc4d-7365-4f60-b33f-2c9551328e57/"
