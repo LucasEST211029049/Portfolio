@@ -199,6 +199,18 @@ elif menu == texts[lang_code]["menu"]["certificates"]:
             "caption_en": "Microsoft SQL Server 2022 - deep dive in procedures and functions",
             "link": "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-procedures-funcoes/certificate?lang=en"
         },
+        {
+            "file": "Certificados/Microsoft SQL Server 2022 - Administering the Database.png",
+            "caption_pt": "Microsoft SQL Server 2022: administrando o banco de dados",
+            "caption_en": "Microsoft SQL Server 2022 - Administering the Database",
+            "link": "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-administrando-banco-dados/certificate?lang=en"
+        },
+        {
+            "file": "Certificados/Microsoft SQL Server 2022 - performance.png",
+            "caption_pt": "Microsoft SQL Server 2022 - performance",
+            "caption_en": "Microsoft SQL Server 2022 - performance",
+            "link": "https://cursos.alura.com.br/user/lucasmoliveirabrito2003/course/microsoft-sql-server-2022-performance/certificate?lang=en"
+        }
     ]
 
     for i in range(0, len(images), 3):
@@ -211,5 +223,22 @@ elif menu == texts[lang_code]["menu"]["certificates"]:
                     st.image(cert["file"], caption=caption, width=250)
                     st.markdown(f"[{texts[lang_code]['view_link']}]({cert['link']})")
 
-    st.subheader(texts[lang_code]["project_management"])
+    st.subheader(texts[lang_code]["Python - Machine Learning"])
+
+    images = {
+        "file": "Certificados/Machine Learning na Prática com Projetos em Python",
+        "caption_pt": "Machine Learning na Prática com Projetos em Python",
+        "caption_en": "Machine Learning in Practice with Python Projects",
+        "link":"https://www.udemy.com/certificate/UC-86a2cc4d-7365-4f60-b33f-2c9551328e57/"
+    }
+
+    for i in range(0, len(images), 3):
+        cols = st.columns(3)
+        for idx, col in enumerate(cols):
+            if i + idx < len(images):
+                cert = images[i + idx]
+                caption = cert["caption_pt"] if lang_code == "pt" else cert["caption_en"]
+                with col:
+                    st.image(cert["file"], caption=caption, width=250)
+                    st.markdown(f"[{texts[lang_code]['view_link']}]({cert['link']})")
     # Aqui você pode adicionar mais certificados ou outras seções conforme quiser
